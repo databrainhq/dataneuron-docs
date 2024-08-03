@@ -86,7 +86,6 @@ except ValueError as e:
 
 ## Next Steps
 
-- Learn about [Advanced Features](advanced-features.md) of the Python SDK
 - Explore how to [deploy your application](../deployment/aws-lambda.md) with Data Neuron
 
 ````
@@ -196,4 +195,4 @@ While powerful, the natural language to SQL feature has some limitations:
 ## Next Steps
 
 - Learn how to [optimize your semantic layer](../advanced-features/semantic-layer-optimization.md) for better natural language understanding.
-- Explore [multi-tenant support](multi-tenant-support.md) to use this feature in client-specific contexts.
+- Explore [multi-tenant support](../features/multi-tenant-support.md) to use this feature in client-specific contexts.

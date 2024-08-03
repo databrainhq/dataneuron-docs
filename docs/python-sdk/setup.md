@@ -98,7 +98,8 @@ except ValueError as e:
 
 ## Next Steps
 
-- Learn about [Advanced Features](advanced-features.md) of the Python SDK
+<!-- - Learn about [Advanced Features](advanced-features.md) of the Python SDK -->
+
 - Explore how to [deploy your application](../deployment/aws-lambda.md) with Data Neuron
 
 ````
