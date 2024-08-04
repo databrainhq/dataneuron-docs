@@ -6,7 +6,7 @@ import { Card } from "../components/ui/Card";
 import { Button } from "../components/ui/Button";
 
 const FeatureCard = ({ title, description }) => (
-  <Card className="p-4">
+  <Card className="p-4 flex-1 min-w-[200px] w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)]">
     <h3 className="text-xl font-semibold mb-2">{title}</h3>
     <p>{description}</p>
   </Card>
@@ -34,15 +34,18 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-8 overflow-x-hidden">
         <section className="mb-12">
           <h2 className="text-3xl font-semibold mb-4">
             Choose Your Integration
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="p-6">
+          <div className="flex flex-wrap gap-8">
+            <Card className="p-6 flex-1 min-w-[300px]">
               <h3 className="text-2xl font-semibold mb-4">Python SDK</h3>
-              <CodeBlock language="python">
+              <CodeBlock
+                language="python"
+                className="text-lg whitespace-pre-wrap"
+              >
                 {`from dataneuron import DataNeuron
 
 dn = DataNeuron(db_config='database.yaml', context='your_context')
@@ -59,9 +62,9 @@ print(f"Result: {result['result']}")`}
                 <Link to="/docs/python-sdk/setup">Learn More</Link>
               </Button>
             </Card>
-            <Card className="p-6">
+            <Card className="p-6 flex-1 min-w-[300px]">
               <h3 className="text-2xl font-semibold mb-4">API Endpoint</h3>
-              <CodeBlock language="markdown">
+              <CodeBlock language="markdown" className="whitespace-pre-wrap">
                 {`Server: dnn --server 
 
 Request: POST /chat
@@ -89,17 +92,15 @@ Response:
 
         <section className="mb-12">
           <h2 className="text-3xl font-semibold mb-4">Chat using CLI</h2>
-          <Card className="p-6 ">
-            <div className="max-w-4xl mx-auto">
-              <div className="aspect-w-16 aspect-h-9">
-                <video className="w-full h-full rounded-md shadow-lg" controls>
-                  <source
-                    src="https://github.com/user-attachments/assets/06969cf9-ca2b-4f95-8a33-8764556ce625"
-                    type="video/mp4"
-                  />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
+          <Card className="p-6">
+            <div className="w-full max-w-[350px] md:max-w-none mx-auto overflow-hidden">
+              <video className="w-full rounded-md shadow-lg" controls>
+                <source
+                  src="https://github.com/user-attachments/assets/06969cf9-ca2b-4f95-8a33-8764556ce625"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </Card>
         </section>
@@ -110,23 +111,21 @@ Response:
             <p className="mb-4">
               The framework to maintain your semantic layer
             </p>
-            <div className="max-w-4xl mx-auto">
-              <div className="aspect-w-16 aspect-h-9">
-                <video className="w-full h-full rounded-md shadow-lg" controls>
-                  <source
-                    src="https://github.com/user-attachments/assets/b5bc7c7f-5a0a-43fb-8802-2fd88a6aa296"
-                    type="video/mp4"
-                  />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
+            <div className="w-full max-w-[350px] md:max-w-none mx-auto overflow-hidden">
+              <video className="w-full rounded-md shadow-lg" controls>
+                <source
+                  src="https://github.com/user-attachments/assets/b5bc7c7f-5a0a-43fb-8802-2fd88a6aa296"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </Card>
         </section>
 
         <section className="mb-12">
           <h2 className="text-3xl font-semibold mb-4">Key Features</h2>
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="flex flex-wrap gap-4">
             <FeatureCard
               title="Semantic Layer"
               description="Easily maintain and improve your data context using YAML files, ensuring accurate and relevant query responses."
