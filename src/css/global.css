@@ -179,3 +179,8 @@
   .breadcrumbs__item:last-child .breadcrumbs__link {
     @apply font-semibold text-gray-800 dark:text-gray-200 pointer-events-none;
   }
+
+  .navbar__logo {
+    width: 140px; 
+    height: auto; /* Maintain aspect ratio */
+  }

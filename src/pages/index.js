@@ -26,8 +26,7 @@ export default function Home() {
             Build Internal and Customer Facing Data Apps
           </h2>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            The library for you to maintain semantic layer and do text2sql
-            accurately with your DB
+            Maintain semantic layer and chat with db accurately
           </p>
           <div className="inline-block">
             <CodeBlock language="bash" className="text-lg">
@@ -96,7 +95,31 @@ Response:
             </p>
             <CodeBlock language="bash">dnn --chat your_context_name</CodeBlock>
             <div className="mt-4 bg-gray-200 dark:bg-gray-700 p-4 rounded-md text-center">
-              [CLI Chat Video Placeholder]
+              <video width="1200" height="540" controls>
+                <source
+                  src="https://github.com/user-attachments/assets/06969cf9-ca2b-4f95-8a33-8764556ce625"
+                  type="video/mp4"
+                />{" "}
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </Card>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-3xl font-semibold mb-4">Semantic Layer</h2>
+          <Card className="p-6">
+            <p className="mb-4">
+              The framework to maintain your semantic layer
+            </p>
+            <div className="mt-4 bg-gray-200 dark:bg-gray-700 p-4 rounded-md text-center">
+              <video width="1200" height="540" controls>
+                <source
+                  src="https://github.com/user-attachments/assets/b5bc7c7f-5a0a-43fb-8802-2fd88a6aa296"
+                  type="video/mp4"
+                />{" "}
+                Your browser does not support the video tag.
+              </video>
             </div>
           </Card>
         </section>

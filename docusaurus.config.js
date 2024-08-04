@@ -20,7 +20,7 @@ const config = {
 
   // GitHub pages deployment config
   organizationName: "databrainhq",
-  projectName: "data-neuron-docs",
+  projectName: "dataneuron-docs",
 
   i18n: {
     defaultLocale: "en",
@@ -33,11 +33,11 @@ const config = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: "https://github.com/databrainhq/data-neuron-docs/tree/main/",
+          editUrl: "https://github.com/databrainhq/dataneuron-docs/tree/main/",
         },
         blog: {
           showReadingTime: true,
-          editUrl: "https://github.com/databrainhq/data-neuron-docs/tree/main/",
+          editUrl: "https://github.com/databrainhq/dataneuron-docs/tree/main/",
         },
         theme: {
           customCss: [
@@ -51,10 +51,9 @@ const config = {
 
   themeConfig: {
     navbar: {
-      title: "Data Neuron",
       logo: {
         alt: "Data Neuron Logo",
-        src: "img/logo.svg",
+        src: "img/dataneuron.png",
       },
       items: [
         {
@@ -109,7 +108,7 @@ const config = {
             },
             {
               label: "GitHub",
-              href: "https://github.com/databrainhq/data-neuron",
+              href: "https://github.com/databrainhq/dataneuron",
             },
             {
               label: "Databrain Labs",
