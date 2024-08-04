@@ -2,7 +2,6 @@ import React from "react";
 import Layout from "@theme/Layout";
 import CodeBlock from "@theme/CodeBlock";
 import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { Card } from "../components/ui/Card";
 import { Button } from "../components/ui/Button";
 
@@ -14,10 +13,9 @@ const FeatureCard = ({ title, description }) => (
 );
 
 export default function Home() {
-  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`Welcome to ${siteConfig.title}`}
+      title={`Chat with your Data through python sdk and API`}
       description="Chat with your data effortlessly using Data Neuron"
     >
       <header className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-10">
@@ -89,19 +87,17 @@ Response:
 
         <section className="mb-12">
           <h2 className="text-3xl font-semibold mb-4">Chat using CLI</h2>
-          <Card className="p-6">
-            <p className="mb-4">
-              Experience Data Neuron directly from your command line:
-            </p>
-            <CodeBlock language="bash">dnn --chat your_context_name</CodeBlock>
-            <div className="mt-4 bg-gray-200 dark:bg-gray-700 p-4 rounded-md text-center">
-              <video width="1200" height="540" controls>
-                <source
-                  src="https://github.com/user-attachments/assets/06969cf9-ca2b-4f95-8a33-8764556ce625"
-                  type="video/mp4"
-                />{" "}
-                Your browser does not support the video tag.
-              </video>
+          <Card className="p-6 ">
+            <div className="max-w-4xl mx-auto">
+              <div className="aspect-w-16 aspect-h-9">
+                <video className="w-full h-full rounded-md shadow-lg" controls>
+                  <source
+                    src="https://github.com/user-attachments/assets/06969cf9-ca2b-4f95-8a33-8764556ce625"
+                    type="video/mp4"
+                  />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
             </div>
           </Card>
         </section>
@@ -112,14 +108,16 @@ Response:
             <p className="mb-4">
               The framework to maintain your semantic layer
             </p>
-            <div className="mt-4 bg-gray-200 dark:bg-gray-700 p-4 rounded-md text-center">
-              <video width="1200" height="540" controls>
-                <source
-                  src="https://github.com/user-attachments/assets/b5bc7c7f-5a0a-43fb-8802-2fd88a6aa296"
-                  type="video/mp4"
-                />{" "}
-                Your browser does not support the video tag.
-              </video>
+            <div className="max-w-4xl mx-auto">
+              <div className="aspect-w-16 aspect-h-9">
+                <video className="w-full h-full rounded-md shadow-lg" controls>
+                  <source
+                    src="https://github.com/user-attachments/assets/b5bc7c7f-5a0a-43fb-8802-2fd88a6aa296"
+                    type="video/mp4"
+                  />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
             </div>
           </Card>
         </section>
