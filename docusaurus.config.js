@@ -113,7 +113,7 @@ const config = {
             },
             {
               label: "Databrain Labs",
-              to: "https://www.usedatabrain.com",
+              href: "https://www.usedatabrain.com",
             },
           ],
         },

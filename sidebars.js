@@ -17,6 +17,7 @@ const sidebars = {
     "intro",
     "installation",
     "quickstart",
+    "configuration",
     {
       type: "category",
       label: "Python SDK",

@@ -67,5 +67,5 @@ While powerful, the natural language to SQL feature has some limitations:
 
 ## Next Steps
 
-- Learn how to [optimize your semantic layer](../advanced-features/semantic-layer-optimization.md) for better natural language understanding.
+- Learn how to [optimize your semantic layer](../features/semantic-layer-optimization.md) for better natural language understanding.
 - Explore [multi-tenant support](multi-tenant-support.md) to use this feature in client-specific contexts.

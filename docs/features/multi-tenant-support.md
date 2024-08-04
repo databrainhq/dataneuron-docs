@@ -2,11 +2,20 @@
 
 Data Neuron provides robust multi-tenant support, allowing you to manage and isolate data for different clients or organizations within a single instance.
 
-## Key Features
+This function will add the appropriate WHERE clause to filter the query based on the client context.
 
-1. **Data Isolation**: Ensure that each tenant's data is securely separated from others.
-2. **Customizable Contexts**: Create specific contexts for each tenant, tailoring the semantic layer to their needs.
-3. **Efficient Resource Utilization**: Share computational resources across tenants while maintaining data separation.
+**Important**: Before using client context features, you need to generate the `client_info.yaml` file using the following command:
+
+```bash
+dnn --mc
+```
+
+This command will create a `client_info.yaml` file that Data Neuron uses to infer table information for client filtering.
+
+**Important Note on Limitations (WIP)**:
+
+- Currently, this client-specific filter works on tables with a `client_id` column. For example, if you query "My order items" but the `order_items` table doesn't have a `client_id` column (while the `orders` table does), the system won't automatically add a JOIN clause.
+- This feature doesn't work with Recursive CTEs yet.
 
 ## Implementation
 
@@ -38,13 +47,6 @@ POST /chat
 }
 ```
 
-## Best Practices
-
-1. **Consistent Naming**: Use a consistent naming convention for tenant identifiers.
-2. **Access Control**: Implement strict access controls to prevent cross-tenant data access.
-3. **Performance Monitoring**: Monitor query performance across tenants to ensure fair resource allocation.
-
 ## Next Steps
 
-- Learn how to [optimize your semantic layer](../advanced-features/semantic-layer-optimization.md) for multi-tenant scenarios
-- Explore [advanced querying techniques](../python-sdk/advanced-querying.md) with multi-tenant data
+- Explore [advanced querying techniques](../python-sdk/advanced-usage.md)

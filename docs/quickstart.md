@@ -95,7 +95,7 @@ Now that you've got the basics, you can:
 
 - [Learn more about the Python SDK](python-sdk/setup.md)
 - [Explore the API Endpoint](api-endpoint/setup.md)
-- [Optimize your semantic layer](advanced-features/semantic-layer-optimization.md)
+- [Optimize your semantic layer](features/semantic-layer-optimization.md)
 - [Set up multi-tenant support](features/multi-tenant-support.md)
 
 Happy data querying with Data Neuron!

@@ -67,4 +67,4 @@ definitions:
 ## Next Steps
 
 - Learn about [multi-tenant support](multi-tenant-support.md) to optimize for different client contexts
-- Explore [advanced querying techniques](../python-sdk/advanced-querying.md) that leverage your optimized semantic layer
+- Explore [advanced querying techniques](../python-sdk/advanced-usage.md) that leverage your optimized semantic layer

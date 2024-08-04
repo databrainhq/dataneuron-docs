@@ -1,4 +1,4 @@
-# Deploying Data Neuron on AWS Lambda
+# AWS Lambda
 
 This guide will walk you through the process of deploying Data Neuron as a serverless application on AWS Lambda.
 

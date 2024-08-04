@@ -80,7 +80,7 @@ pip install "dataneuron[mysql,pdf]"
 
 ## System dependencies
 
-1. Set the appropriate environment variables for your chosen LLM provider (see [Configuration](configuration.md) for details).
+1. Set the appropriate environment variables for your chosen LLM provider (see [Configuration](configuration) for details).
 
 2. If you plan to use PDF report generation, install `wkhtmltopdf`:
 
@@ -103,7 +103,7 @@ This should display the version number of Data Neuron.
 
 Now that you have Data Neuron installed, you're ready to:
 
-- [Configure your environment](configuration.md)
+- [Configure your environment](configuration)
 - [Get started with your first query](quickstart.md)
 
 If you encounter any issues during installation, please check our [Troubleshooting](troubleshooting.md) guide or reach out to our community for support.
