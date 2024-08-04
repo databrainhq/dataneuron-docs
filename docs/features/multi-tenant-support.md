@@ -44,4 +44,7 @@ POST /chat
 2. **Access Control**: Implement strict access controls to prevent cross-tenant data access.
 3. **Performance Monitoring**: Monitor query performance across tenants to ensure fair resource allocation.
 
-By leveraging Data Neuron's multi-tenant support, you can efficiently manage data for multiple clients or departments within a single, scalable infrastructure.
+## Next Steps
+
+- Learn how to [optimize your semantic layer](../advanced-features/semantic-layer-optimization.md) for multi-tenant scenarios
+- Explore [advanced querying techniques](../python-sdk/advanced-querying.md) with multi-tenant data

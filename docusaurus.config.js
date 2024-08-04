@@ -19,7 +19,7 @@ const config = {
   favicon: "img/favicon.ico",
 
   // GitHub pages deployment config
-  organizationName: "your-github-org",
+  organizationName: "databrainhq",
   projectName: "data-neuron-docs",
 
   i18n: {
@@ -33,13 +33,11 @@ const config = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl:
-            "https://github.com/your-github-org/data-neuron-docs/tree/main/",
+          editUrl: "https://github.com/databrainhq/data-neuron-docs/tree/main/",
         },
         blog: {
           showReadingTime: true,
-          editUrl:
-            "https://github.com/your-github-org/data-neuron-docs/tree/main/",
+          editUrl: "https://github.com/databrainhq/data-neuron-docs/tree/main/",
         },
         theme: {
           customCss: [
@@ -111,12 +109,16 @@ const config = {
             },
             {
               label: "GitHub",
-              href: "https://github.com/your-github-org/data-neuron",
+              href: "https://github.com/databrainhq/data-neuron",
+            },
+            {
+              label: "Databrain Labs",
+              to: "https://www.usedatabrain.com",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Data Neuron, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} DataBrain Labs, Inc. (www.usedatabrain.com)`,
     },
   },
 };

@@ -20,27 +20,34 @@ const sidebars = {
     {
       type: "category",
       label: "Python SDK",
-      items: ["python-sdk/setup", "python-sdk/basic-usage"],
+      items: [
+        "python-sdk/setup",
+        "python-sdk/basic-usage",
+        "python-sdk/advanced-usage",
+      ],
     },
     {
       type: "category",
       label: "API Endpoint",
       items: ["api-endpoint/setup"],
     },
-    // {
-    //   type: "category",
-    //   label: "Features",
-    //   items: [
-    //     "features/natural-language-to-sql",
-    //     "features/multi-database-support",
-    //     "features/multi-tenant-support",
-    //   ],
-    // },
-    // {
-    //   type: "category",
-    //   label: "Deployment",
-    //   items: ["deployment/aws-lambda", "deployment/vps"],
-    // },
+    {
+      type: "category",
+      label: "Features",
+      items: [
+        "features/natural-language-to-sql",
+        "features/advanced-features",
+        "features/semantic-layer-optimization",
+        // "features/multi-database-support",
+        "features/multi-tenant-support",
+      ],
+    },
+    {
+      type: "category",
+      label: "Deployment",
+      items: ["deployment/aws-lambda"],
+    },
+    "troubleshooting",
   ],
 };
 

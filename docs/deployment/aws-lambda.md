@@ -1,26 +1,33 @@
 # Deploying Data Neuron on AWS Lambda
 
-Deploying Data Neuron on AWS Lambda allows you to create a scalable, serverless API for your data queries. This guide will walk you through the process of setting up Data Neuron on AWS Lambda.
+This guide will walk you through the process of deploying Data Neuron as a serverless application on AWS Lambda.
 
 ## Prerequisites
 
 - An AWS account
 - AWS CLI installed and configured
 - Serverless Framework installed (`npm install -g serverless`)
+- Python 3.8 or later
 
-## Steps
+## Deployment Steps
 
 1. **Prepare Your Project**
 
-   Create a new directory for your Lambda function and initialize a new Node.js project:
+   Create a new directory for your Lambda function:
 
    ```bash
    mkdir data-neuron-lambda && cd data-neuron-lambda
-   npm init -y
-   npm install dataneuron serverless-python-requirements
    ```
 
-2. **Create a Serverless Configuration**
+2. **Install Dependencies**
+
+   Create a `requirements.txt` file with the following content:
+
+   ```
+   dataneuron[mysql]
+   ```
+
+3. **Create a Serverless Configuration**
 
    Create a `serverless.yml` file:
 
@@ -49,7 +56,7 @@ Deploying Data Neuron on AWS Lambda allows you to create a scalable, serverless 
        dockerizePip: non-linux
    ```
 
-3. **Create a Handler**
+4. **Create a Handler**
 
    Create a `handler.py` file:
 
@@ -77,7 +84,7 @@ Deploying Data Neuron on AWS Lambda allows you to create a scalable, serverless 
            }
    ```
 
-4. **Deploy**
+5. **Deploy**
 
    Deploy your function to AWS Lambda:
 
@@ -85,14 +92,21 @@ Deploying Data Neuron on AWS Lambda allows you to create a scalable, serverless 
    serverless deploy
    ```
 
-5. **Test Your Deployment**
+## Considerations for Serverless Deployment
 
-   Once deployed, you can test your function using the AWS Console or by making a POST request to the provided API Gateway endpoint.
+- **Cold Starts**: Be aware of cold start times for Lambda functions. Consider using provisioned concurrency for frequently accessed functions.
+- **Database Connections**: Ensure your `database.yaml` configuration is set up to handle serverless environments, potentially using connection pooling.
+- **Environment Variables**: Use AWS Lambda environment variables to store sensitive information like API keys.
+- **Timeouts**: Configure appropriate timeouts for your Lambda function based on expected query complexity.
+- **Dependencies**: Certain database adapters like mssql require a system dependency in which case it needs to be figured on how to include it, similarly htmltopdf library needs to be installed through AWS layer for reports to work.
 
-## Considerations
+## Monitoring and Logging
 
-- Ensure your `database.yaml` and any other necessary configuration files are included in your deployment package.
-- Set up appropriate IAM roles and permissions for your Lambda function to access necessary AWS resources.
-- Consider using AWS Secrets Manager to securely store and manage sensitive configuration data.
+- Use AWS CloudWatch to monitor your Lambda function's performance and logs.
+- Implement proper error handling and logging in your handler function.
 
-By deploying Data Neuron on AWS Lambda, you can create a scalable, pay-per-use API for natural language queries on your data.
+## Next Steps
+
+- Set up [API Gateway](https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html) to create a RESTful API for your Lambda function.
+- Implement [authentication and authorization](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-control-access-to-api.html) for your API endpoints.
+- Explore [AWS Lambda Layers](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html) for managing dependencies in larger projects.

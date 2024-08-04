@@ -2,8 +2,8 @@ import React from "react";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { Card } from "../components/ui/Card";
-import { Button } from "../components/ui/Button";
+import { Card } from "../components/ui/card";
+import { Button } from "../components/ui/button";
 
 const CodeBlock = ({ children, language }) => (
   <pre className="bg-gray-100 p-4 rounded-md overflow-x-auto text-sm">
