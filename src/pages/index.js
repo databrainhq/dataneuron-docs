@@ -61,8 +61,10 @@ print(f"Result: {result['result']}")`}
             </Card>
             <Card className="p-6">
               <h3 className="text-2xl font-semibold mb-4">API Endpoint</h3>
-              <CodeBlock language="json">
-                {`POST /chat
+              <CodeBlock language="markdown">
+                {`Server: dnn --server 
+
+Request: POST /chat
 {
   "messages": [
     {"role": "user", "content": "How many users signed up last month?"}

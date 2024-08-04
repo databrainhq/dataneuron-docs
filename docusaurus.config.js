@@ -12,7 +12,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 const config = {
   title: "Data Neuron",
   tagline: "Chat with Your Data, Effortlessly",
-  url: "https://dataneuron.dev",
+  url: "https://www.dataneuron.dev",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -95,7 +95,7 @@ const config = {
             },
             {
               label: "Discord",
-              href: "https://discordapp.com/invite/data-neuron",
+              href: "https://discord.gg/wmZ89BhDFa",
             },
           ],
         },
@@ -117,7 +117,7 @@ const config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} DataBrain Labs, Inc. (www.usedatabrain.com)`,
+      copyright: `Copyright © ${new Date().getFullYear()} DataBrain Labs, Inc`,
     },
   },
 };

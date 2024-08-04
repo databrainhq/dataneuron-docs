@@ -1,4 +1,4 @@
-# AWS Lambda
+# AWS Lambda Deployment
 
 This guide will walk you through the process of deploying Data Neuron as a serverless application on AWS Lambda.
 
@@ -24,7 +24,7 @@ This guide will walk you through the process of deploying Data Neuron as a serve
    Create a `requirements.txt` file with the following content:
 
    ```
-   dataneuron[mysql]
+   dataneuron[mysql]  # Replace 'mysql' with your specific database requirement
    ```
 
 3. **Create a Serverless Configuration**
@@ -41,12 +41,15 @@ This guide will walk you through the process of deploying Data Neuron as a serve
      region: ${opt:region, 'us-east-1'}
 
    functions:
-     query:
-       handler: handler.query
+     app:
+       handler: dataneuron.lambda_handler
        events:
          - http:
-             path: query
-             method: post
+             path: /{proxy+}
+             method: ANY
+       environment:
+         CLAUDE_API_KEY: ${env:CLAUDE_API_KEY}
+         # Add any other environment variables your app needs
 
    plugins:
      - serverless-python-requirements
@@ -56,35 +59,7 @@ This guide will walk you through the process of deploying Data Neuron as a serve
        dockerizePip: non-linux
    ```
 
-4. **Create a Handler**
-
-   Create a `handler.py` file:
-
-   ```python
-   import json
-   from dataneuron import DataNeuron
-
-   dn = DataNeuron(db_config='database.yaml', context='your_context')
-   dn.initialize()
-
-   def query(event, context):
-       body = json.loads(event['body'])
-       query_text = body['query']
-
-       try:
-           result = dn.query(query_text)
-           return {
-               'statusCode': 200,
-               'body': json.dumps(result)
-           }
-       except Exception as e:
-           return {
-               'statusCode': 500,
-               'body': json.dumps({'error': str(e)})
-           }
-   ```
-
-5. **Deploy**
+4. **Deploy**
 
    Deploy your function to AWS Lambda:
 
@@ -95,18 +70,12 @@ This guide will walk you through the process of deploying Data Neuron as a serve
 ## Considerations for Serverless Deployment
 
 - **Cold Starts**: Be aware of cold start times for Lambda functions. Consider using provisioned concurrency for frequently accessed functions.
-- **Database Connections**: Ensure your `database.yaml` configuration is set up to handle serverless environments, potentially using connection pooling.
-- **Environment Variables**: Use AWS Lambda environment variables to store sensitive information like API keys.
+- **Database Connections**: Ensure your database configuration is set up to handle serverless environments, potentially using connection pooling.
+- **Environment Variables**: Use AWS Lambda environment variables to store sensitive information like API keys and database credentials.
 - **Timeouts**: Configure appropriate timeouts for your Lambda function based on expected query complexity.
-- **Dependencies**: Certain database adapters like mssql require a system dependency in which case it needs to be figured on how to include it, similarly htmltopdf library needs to be installed through AWS layer for reports to work.
+- **Dependencies**: Certain database adapters or libraries may require additional setup. For example, MSSQL adapters or the `wkhtmltopdf` library for PDF generation may need to be included as Lambda Layers.
 
 ## Monitoring and Logging
 
 - Use AWS CloudWatch to monitor your Lambda function's performance and logs.
-- Implement proper error handling and logging in your handler function.
-
-## Next Steps
-
-- Set up [API Gateway](https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html) to create a RESTful API for your Lambda function.
-- Implement [authentication and authorization](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-control-access-to-api.html) for your API endpoints.
-- Explore [AWS Lambda Layers](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html) for managing dependencies in larger projects.
+- Implement proper error handling and logging in your application code.
